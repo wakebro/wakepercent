@@ -1,0 +1,105 @@
+// Layout
+// ========================================================================
+body,
+#root,
+.wrapper {
+    height: 100%;;
+    // background-color: red;
+}
+.test {
+    background-color: gray;
+}
+.hello {
+    background-color: yellowgreen;
+}
+.err{
+    background-color: black;
+}
+
+body #root .wrapper .ps__rail-y {
+    left: auto !important ;
+    right: 1px !important;
+}
+
+// Profile Dropdown (Common)
+// ========================================================================
+.vertical-layout,
+.horizontal-layout {
+  .header-navbar:not(.navbar-horizontal) .navbar-container ul.navbar-nav {
+    li.dropdown {
+      .dropdown-menu {
+        top: 3.5rem !important;
+      }
+      &.dropdown-user {
+        .dropdown-menu {
+          top: 4rem !important;
+        }
+      }
+    }
+  }
+}
+
+// Horizontal Menu
+// ========================================================================
+.horizontal-layout {
+  &.navbar-static .header-navbar.navbar-scrolled {
+    background-color: $white;
+    box-shadow: rgba($black, 0.05) 0px 4px 20px 0px;
+  }
+
+  // Main Navbar
+  .header-navbar {
+    .navbar-container {
+      .dropdown-language,
+      .dropdown-cart,
+      .dropdown-notification,
+      .dropdown-user {
+        .dropdown-menu {
+          top: 3rem !important;
+        }
+      }
+    }
+  }
+
+  // Menu
+  .horizontal-menu-wrapper {
+    #main-menu-navigation {
+      .dropdown {
+        .dropdown-menu {
+        }
+        .dropdown-menu.first-level {
+          top: 3.6rem !important;
+        }
+        .dropdown-submenu {
+          .dropdown-toggle:after {
+            margin-top: -5px;
+          }
+        }
+      }
+    }
+
+    .navbar-horizontal {
+      ul.dropdown-menu {
+        .nav-item.active > a {
+          border-bottom: none;
+        }
+
+        // Scrollbar styles
+        &::-webkit-scrollbar {
+          width: 5px;
+          height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $gray-500;
+          border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: $gray-300;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}

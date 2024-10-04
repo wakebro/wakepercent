@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "paths": {
+        "@src": ["./*"],
+        // "@redux": ["./pages/index.tsx"], // index 파일 Alias 세팅
+        "@redux/*": ["./redux/*"],
+        "@utility/*": ["./utility/*"],
+        "@views/*": ["./views/*"],
+        "@layouts/*": ["./@core/layouts/*"],
+        "@configs/*": ["./configs/*"]
+      }
+    }
+}

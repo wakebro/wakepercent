@@ -1,0 +1,48 @@
+version: '3.7'
+services:
+  backend_local:
+    # build: ./backend
+    image: backend_local
+    container_name: wakepercent-backend_local
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend/wakepercent:/app
+    restart: always
+    environment:
+      SPRING_DATASOURCE_UR: jdbc:mysql://host.docker.internal:3306/hotel
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: My$ql000
+      TZ: Asia/Seoul
+    # command: java -jar app.jar
+    command: ./gradlew bootRun
+    # command: tail -F /dev/null
+
+  frontend_local:
+    # build: ./frontend
+    container_name: wakepercent-frontend_local
+    image: frontend_local
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/usr/src/app
+    restart: always
+    ipc: host
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - TZ=Asia/Seoul
+    # command: tail -F /dev/null
+    command: npm start
+
+  revers_proxy_local:
+  #   build: ./nginx
+    container_name: wakepercent-revers_proxy
+    image: revers_proxy_local
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx-local.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend_local
+      - frontend_local
+    restart: always
