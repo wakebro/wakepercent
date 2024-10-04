@@ -210,6 +210,8 @@ sketch
 ### Gradle ###
 **/gradle
 **/.gradle
+backend/wakepercent/gradle
+backend/wakepercent/.gradle
 **/build/
 !src/**/build/
 
