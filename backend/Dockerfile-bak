@@ -4,4 +4,4 @@ ARG JAR_FILE=./wakepercent/build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 
 RUN apt-get update -y && apt-get install -y mysql-community-client
-# ENTRYPOINT ["java","-jar","/app.jar"]
+# ENTRYPOINT ["java","-jar","/app.jar"]d
