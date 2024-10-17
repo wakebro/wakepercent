@@ -11,13 +11,13 @@ export default [
         id: 'analyticsDash',
         title: '내 소개',
         icon: <Activity />,
-        navLink: '/dashboard/analytics'
+        navLink: '/dashboard/me'
       },
       {
         id: 'eCommerceDash',
         title: '사이트 소개',
         icon: <ShoppingCart />,
-        navLink: '/dashboard/ecommerce'
+        navLink: '/dashboard/site'
       }
     ]
   }

@@ -1,4 +1,4 @@
-import { ReactElement } from "react"
+import { ReactElement, lazy, LazyExoticComponent, ComponentType } from "react"
 
 export interface MenuItem {
   id: string,
@@ -21,4 +21,9 @@ export interface CoreMenuFunProps {
   setOpenDropdown: React.Dispatch<React.SetStateAction<String[]>>
   onMouseEnter: (id:String) => void
   onMouseLeave: (id:String) => void
+}
+
+export interface RoutesInfo {
+  path: string
+  component: LazyExoticComponent<ComponentType<any>>
 }
