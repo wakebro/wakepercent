@@ -1,10 +1,9 @@
-import React, { Fragment, ReactNode } from 'react'
+import React from 'react'
 
 // ** Reactstrap Imports
-import { Navbar, NavItem } from "reactstrap";
+import { Navbar, NavItem } from "reactstrap"
 
 // ** Custom Components
-import NavbarComponent from './components/navbar'
 import FooterComponent from './components/footer'
 import MenuComponent from './components/menu/horizontal-menu'
 
@@ -12,8 +11,8 @@ import MenuComponent from './components/menu/horizontal-menu'
 import themeConfig from '@configs/themeConfig'
 
 // ** Third Party Components
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import classNames from 'classnames'
+import { Link } from 'react-router-dom'
 
 // ** Styles
 import '@styles/base/core/menu/menu-types/horizontal-menu.scss'
@@ -27,9 +26,6 @@ interface TestLayoutProps {
 // function HorizontalLayout<T>(props :T) {
 // function HorizontalLayout(props: {menuData: any, children: ReactNode}) {
 function HorizontalLayout(props: TestLayoutProps) {
-    // console.log(props)
-    // console.log(props.menuData)
-    console.log('112!2!!!')
     
     return(
         <div className={classNames(
@@ -69,7 +65,7 @@ function HorizontalLayout(props: TestLayoutProps) {
                     tag='div'
                     expand='sm'
                     light
-                    // dar=''
+                    style={{maxWidth:'none'}} // 추후 삭제 필요, menu-types > horizontal-menu.scss Initially menu & content width for md and down screen 주석 해제 
                     className={classNames(
                         'header-navbar navbar-horizontal navbar-shadow menu-border floating-nav container-xxl floating-nav navbar navbar-expand-sm navbar-light'
                     )}>

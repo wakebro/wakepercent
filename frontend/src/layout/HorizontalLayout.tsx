@@ -11,7 +11,6 @@ interface TestLayoutProps {
 }
 
 function HorizontalLayout(props: TestLayoutProps) {
-    // console.log(navigation)
     return(
         <Layout menuData={navigation} {...props}>
             {props.children}
