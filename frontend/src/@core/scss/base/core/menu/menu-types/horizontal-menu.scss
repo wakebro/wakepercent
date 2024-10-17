@@ -564,24 +564,24 @@
 }
 
 // Initially menu & content width for md and down screen
-@include media-breakpoint-down(xl) {
-  .horizontal-layout {
-    &.horizontal-menu {
-      .horizontal-menu-wrapper {
-        .header-navbar {
-          display: none;
-        }
-      }
-    }
-    .header-navbar {
-      background: $white;
-    }
-    .app-content {
-      padding: calc(#{$navbar-height} + calc(#{$content-padding} - 0.8rem)) calc(#{$content-padding} - 0.8rem) 0
-        calc(#{$content-padding} - 0.8rem) !important;
-    }
-  }
-}
+// @include media-breakpoint-down(xl) {
+//   .horizontal-layout {
+//     &.horizontal-menu {
+//       .horizontal-menu-wrapper {
+//         .header-navbar {
+//           display: none;
+//         }
+//       }
+//     }
+//     .header-navbar {
+//       background: $white;
+//     }
+//     .app-content {
+//       padding: calc(#{$navbar-height} + calc(#{$content-padding} - 0.8rem)) calc(#{$content-padding} - 0.8rem) 0
+//         calc(#{$content-padding} - 0.8rem) !important;
+//     }
+//   }
+// }
 
 @include media-breakpoint-down(sm) {
   // For static navbar
