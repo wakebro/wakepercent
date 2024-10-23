@@ -4,9 +4,10 @@ import LayoutTag from "../layout/HorizontalLayout"
 import { RouteArr } from "./routes"
 
 
-import Hello from "@views/Hello"
-import { Fragment } from "react/jsx-runtime"
+// import LayoutWrapper from "@core/layouts/components/layout-wrapper"
+import LayoutWrapper from "@layouts/components/layout-wrapper"
 import { RoutesInfo } from "@core/typescript/layout"
+import { Fragment } from "react/jsx-runtime"
 
 const Router = () => {
     // ** Return Filtered Array of Routes & Paths
@@ -18,12 +19,6 @@ const Router = () => {
             RouteArr.filter(route => {
                 LayoutRoutes.push(route)
                 LayoutPaths.push(route.path)
-                
-                // ** Checks if Route layout or Default layout matches current layout
-                // if (route.layout === layout || (route.layout === undefined && DefaultLayout === layout)) {
-                // LayoutRoutes.push(route)
-                // LayoutPaths.push(route.path)
-                // }
             })
         }
 
@@ -31,11 +26,6 @@ const Router = () => {
     }
 
     const ResolveRoutes = () => {
-        const testList = ['hello', 'test']
-        // child 불러오는 순서 간략화 > 완료
-        // lazy component 불러오는 방법 공부 > 완료
-        // 모바일 화면시 메뉴 위치 > 해제
-        // 한/영 위치
         const { LayoutRoutes, LayoutPaths } = LayoutRoutesAndPaths()
         
         return(
@@ -43,7 +33,11 @@ const Router = () => {
                 {
                     LayoutRoutes.map((route, idx) => {
                         return (
-                            <Route key={idx} path={route.path} element={<route.component/>}/>
+                            <Route key={idx} path={route.path} element={
+                                <LayoutWrapper>
+                                    <route.component/>
+                                </LayoutWrapper>
+                            }/>
                         )
                     })
                 }

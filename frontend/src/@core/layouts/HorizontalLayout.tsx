@@ -26,12 +26,9 @@ interface TestLayoutProps {
 // function HorizontalLayout<T>(props :T) {
 // function HorizontalLayout(props: {menuData: any, children: ReactNode}) {
 function HorizontalLayout(props: TestLayoutProps) {
-    
     return(
         <div className={classNames(
-            `wrapper horizontal-layout horizontal-menu navbar-floating footer-static menu-expanded`
-        )}
-        style={{display:'flex', flexDirection:'column'}}>
+            `wrapper horizontal-layout horizontal-menu navbar-floating footer-static menu-expanded`)}>
             <Navbar
                 expand='lg'
                 container={false}
@@ -65,7 +62,7 @@ function HorizontalLayout(props: TestLayoutProps) {
                     tag='div'
                     expand='sm'
                     light
-                    style={{maxWidth:'none'}} // 추후 삭제 필요, menu-types > horizontal-menu.scss Initially menu & content width for md and down screen 주석 해제 
+                    style={{maxWidth:'none', marginTop:'0px'}} // 추후 삭제 필요, menu-types > horizontal-menu.scss Initially menu & content width for md and down screen 주석 해제 
                     className={classNames(
                         'header-navbar navbar-horizontal navbar-shadow menu-border floating-nav container-xxl floating-nav navbar navbar-expand-sm navbar-light'
                     )}>
@@ -73,14 +70,7 @@ function HorizontalLayout(props: TestLayoutProps) {
                 </Navbar>
             </div>
 
-            <div className='app-content content overflow-hidden'>
-                <div className='content-overlay'></div>
-                <div className='header-navbar-shadow' />
-                <div className='content-wrapper container-xxl p-0 animate__animated animate__fadeIn'>
-
-                </div>
-                {props.children}
-            </div>
+            {props.children}
 
             <footer className='footer footer-light footer-static'>
                 <FooterComponent/>
