@@ -4,6 +4,7 @@ import React from 'react'
 import { Navbar, NavItem } from "reactstrap"
 
 // ** Custom Components
+import NavbarComponet from './components/navbar'
 import FooterComponent from './components/footer'
 import MenuComponent from './components/menu/horizontal-menu'
 
@@ -49,11 +50,11 @@ function HorizontalLayout(props: TestLayoutProps) {
                     </ul>
                 </div>
 
-                {/* header left Bookmark
+                {/* header Bookmark */}
                 <div className='navbar-container d-flex content' style={{maxHeight:'60px'}}>
-                    {navbar ? navbar : <NavbarComponent skin={skin} setSkin={setSkin} />}
-                    <NavbarComponent/>
-                </div> */}
+                    {/* {navbar ? navbar : <NavbarComponent skin={skin} setSkin={setSkin} />} */}
+                    <NavbarComponet/>
+                </div>
             </Navbar>
 
             {/* 1st middlemenu */}
