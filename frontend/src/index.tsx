@@ -10,6 +10,9 @@ import store from './redux/store'
 // ** Core styles
 import './@core/scss/core.scss'
 
+// ** i18n
+import './configs/i18n'
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
