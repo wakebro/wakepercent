@@ -8,13 +8,13 @@ export default [
     icon: <Home />,
     children: [
       {
-        id: 'analyticsDash',
+        id: 'abouteMe',
         title: '내 소개',
         icon: <Activity />,
         navLink: '/dashboard/me'
       },
       {
-        id: 'eCommerceDash',
+        id: 'aboutSite',
         title: '사이트 소개',
         icon: <ShoppingCart />,
         navLink: '/dashboard/site'

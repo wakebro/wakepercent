@@ -1,10 +1,13 @@
 import { CoreMenuFunProps, MenuItem, MenuItems } from "@core/typescript/layout";
+import { hasActiveChild } from "@layouts/utils";
+
 import classNames from "classnames";
-import { Dropdown, DropdownMenu, DropdownToggle } from "reactstrap";
-import HorizontalNavMenuItems from "./HorizontalNavMenuItems";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import { hasActiveChild } from "@layouts/utils"
+import { Dropdown, DropdownMenu, DropdownToggle } from "reactstrap";
+
+import HorizontalNavMenuItems from "./HorizontalNavMenuItems";
 
 const HorizontalNavMenuGroup = ({
   menuData,
@@ -15,6 +18,7 @@ const HorizontalNavMenuGroup = ({
 
   // ** Hooks
   const location = useLocation()
+  const { t } = useTranslation()
 
   // ** URL Var
   const currentURL = useLocation().pathname
@@ -53,7 +57,7 @@ const HorizontalNavMenuGroup = ({
         })}
       >
         {menuData?.icon}
-        <span>{menuData?.title}</span>
+        <span>{t(`header.menubar.${ menuData?.id }`)}</span>
       </DropdownToggle>
       <DropdownMenu tag='ul' className={classNames({ 'first-level': submenu === false })}>
         <HorizontalNavMenuItems

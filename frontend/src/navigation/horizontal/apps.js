@@ -14,7 +14,7 @@ import {
 
 export default [
   {
-    id: 'apps',
+    id: 'aboutPrjs',
     title: '프로젝트',
     icon: <Box />,
     children: [

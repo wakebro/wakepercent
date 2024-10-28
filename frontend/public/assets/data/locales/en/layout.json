@@ -1,5 +1,11 @@
 {
   "header" : {
-    "language" : "Language"
+    "language" : "Language",
+    "menubar" : {
+      "dashboards" : "Dashboard",
+      "abouteMe" : "About Me",
+      "aboutSite" : "About Site",
+      "aboutPrjs" : "Projects"
+    }
   }
 }

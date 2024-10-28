@@ -1,5 +1,11 @@
 {
   "header" : {
-    "language" : "언어 설정"
+    "language" : "언어 설정",
+    "menubar" : {
+      "dashboards" : "대시보드",
+      "abouteMe" : "내 소개",
+      "aboutSite" : "사이트 소개",
+      "aboutPrjs" : "프로젝트"
+    }
   }
 }
