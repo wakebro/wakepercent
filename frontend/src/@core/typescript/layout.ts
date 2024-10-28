@@ -1,4 +1,4 @@
-import { ReactElement, lazy, LazyExoticComponent, ComponentType } from "react"
+import { ComponentType, LazyExoticComponent, ReactElement } from "react"
 
 export interface MenuItem {
   id: string,

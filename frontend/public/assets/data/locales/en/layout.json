@@ -2,7 +2,7 @@
   "header" : {
     "language" : "Language",
     "menubar" : {
-      "dashboards" : "Dashboard",
+      "about" : "About",
       "abouteMe" : "About Me",
       "aboutSite" : "About Site",
       "aboutPrjs" : "Projects"

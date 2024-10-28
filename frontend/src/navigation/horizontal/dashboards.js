@@ -3,8 +3,8 @@ import { Home, Activity, ShoppingCart } from 'react-feather'
 
 export default [
   {
-    id: 'dashboards',
-    title: '대시보드',
+    id: 'about',
+    title: '소개',
     icon: <Home />,
     children: [
       {
