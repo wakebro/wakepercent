@@ -8,7 +8,8 @@
         "@utility/*": ["./utility/*"],
         "@views/*": ["./views/*"],
         "@layouts/*": ["./@core/layouts/*"],
-        "@configs/*": ["./configs/*"]
+        "@configs/*": ["./configs/*"],
+        "@constants/*": ["./constants/*"],
       }
     }
 }

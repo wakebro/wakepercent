@@ -10,6 +10,7 @@ module.exports = {
         '@layouts': path.resolve(__dirname, 'src/@core/layouts'),
         '@styles': path.resolve(__dirname, 'src/@core/scss'),
         '@configs': path.resolve(__dirname, 'src/configs'),
+        '@constants': path.resolve(__dirname, 'src/constants'),
       },
     },
   }
