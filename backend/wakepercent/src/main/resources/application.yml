@@ -2,9 +2,9 @@ spring:
   profiles:
     active: local
   datasource:
-    url: jdbc:mysql://localhost:3306/hotel
-    username: root
-    password: My$ql000
+    url: jdbc:mysql://host.docker.internal:3306/wakepercent
+    username: 'wake'
+    password: 'My$ql000'
     driver-class-name: com.mysql.cj.jdbc.Driver
   devtools:
     livereload:

@@ -10,10 +10,9 @@ services:
       - ./backend/wakepercent:/app
     restart: always
     environment:
-      SPRING_DATASOURCE_UR: jdbc:mysql://host.docker.internal:3306/hotel
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_UR: jdbc:mysql://host.docker.internal:3306/wakepercent
+      SPRING_DATASOURCE_USERNAME: wake
       SPRING_DATASOURCE_PASSWORD: My$ql000
-      TZ: Asia/Seoul
     # command: java -jar app.jar
     command: ./gradlew bootRun
     # command: tail -F /dev/null
