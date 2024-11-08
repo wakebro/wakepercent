@@ -1,4 +1,4 @@
-package com.wakepercent.entity;
+package com.wakepercent.commonEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,12 +8,20 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.awt.*;
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Test {
+////@ToString
+public class Content {
+
     @Id @GeneratedValue
-    @Column(name = "test_id")
+    @Column(name = "content_id")
     private Long id;
-    private String name;
+    private String content;
+
+    public Content(String content) {
+        this.content = content;
+    }
 }
