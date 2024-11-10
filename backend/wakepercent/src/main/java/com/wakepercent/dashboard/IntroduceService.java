@@ -1,6 +1,8 @@
 package com.wakepercent.dashboard;
 
 import com.wakepercent.commonEntity.Content;
+import com.wakepercent.commonEntity.ContentType;
+import com.wakepercent.commonEntity.dto.ContentDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,4 +16,6 @@ public class IntroduceService {
     public void getSiteIntroduce() {
         List<Content> introduce = introduceRepository.findAll();
     }
+
+    public ContentDto getContent (ContentType contentType, String lang) { return introduceRepository.findByContentType(contentType, lang).get(0);}
 }

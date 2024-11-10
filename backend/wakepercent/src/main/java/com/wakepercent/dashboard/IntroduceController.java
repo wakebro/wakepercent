@@ -1,5 +1,6 @@
 package com.wakepercent.dashboard;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.wakepercent.commonEntity.Content;
@@ -15,15 +16,13 @@ import lombok.RequiredArgsConstructor;
 public class IntroduceController {
     private final IntroduceService introduceService;
     @GetMapping("/api/about/site")
-    public Map<String, String> site(@RequestParam Long userId,
-                                    @RequestParam ContentType type,
+    public Map<String, Object> getSiteContent(// @RequestParam Long userId,
+                                    @RequestParam ContentType contentType,
                                     @RequestParam String lang) {
-        System.out.println("userId = " + userId);
-        System.out.println("type = " + type);
-        System.out.println("lang = " + lang);
-        System.out.println("!!!");
-
-        return Map.of("id", "hello", "name", "abc");
+        System.out.println("???");
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("result", introduceService.getContent(contentType, lang));
+        return resultMap;
     }
 
 }

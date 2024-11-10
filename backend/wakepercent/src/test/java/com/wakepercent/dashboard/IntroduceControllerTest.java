@@ -1,24 +1,31 @@
 package com.wakepercent.dashboard;
 
 import com.wakepercent.commonEntity.ContentType;
-import com.wakepercent.commonEntity.dto.ContentDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @Transactional
-class IntroduceServiceTest {
-    @Autowired IntroduceService introduceService;
+class IntroduceControllerTest {
+    @Autowired IntroduceController introduceController;
 
     @Test
-    public void getContentTest() {
+    public void getSiteContentTest() {
+        Long userId = 1L;
         ContentType contentType = ContentType.SITE;
         System.out.println("contentType = " + contentType);
         String lang = "ko";
-        ContentDto result = introduceService.getContent(contentType, lang);
-        System.out.println("result.getContent() = " + result.getContent());
+        Map<String, Object> result = introduceController.getSiteContent(
+            //userId,
+            contentType,
+            lang
+        );
+        System.out.println("result.get(\"content\") = " + result.get("content"));
     }
+
 }

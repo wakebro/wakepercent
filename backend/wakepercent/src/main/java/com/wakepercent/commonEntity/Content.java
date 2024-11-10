@@ -18,7 +18,7 @@ public class Content {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private ContentType type;
+    private ContentType contentType;
 
     private String contentKo;
 
