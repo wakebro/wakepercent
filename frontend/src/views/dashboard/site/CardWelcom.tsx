@@ -21,7 +21,7 @@ const CardWelcom = () => {
   useEffect(() => {
     const params = { 
       lang: i18n.language,
-      // contentType: 'site'
+      contentType: 'site'
     }
 
     getDatas({
