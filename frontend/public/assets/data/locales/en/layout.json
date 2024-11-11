@@ -10,6 +10,12 @@
   },
   "about": {
     "webComposition": "Web Composition",
-    "webUpdateLog": "Web Upadte Log"
+    "webUpdateLog": "Web Upadte Log",
+    "meIntroduce": "hello, MeIntroduce"
+  },
+  "error": {
+    "title": "Page Not Found 🙅",
+    "content": "The requested URL was not found on this server.",
+    "button": "Back to home"
   }
 }

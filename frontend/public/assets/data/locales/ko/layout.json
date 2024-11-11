@@ -10,6 +10,12 @@
   },
   "about": {
     "webComposition": "웹 구조",
-    "webUpdateLog": "웹 업데이트 로그"
+    "webUpdateLog": "웹 업데이트 로그",
+    "meIntroduce": "안녕하세요! MeIntroduce"
+  },
+  "error": {
+    "title": "찾을 수 없는 페이지 🙅",
+    "content": "접속한 URL은 지원하지 않거나 잘못된 경로입니다.",
+    "button": "홈으로 돌아가기"
   }
 }
