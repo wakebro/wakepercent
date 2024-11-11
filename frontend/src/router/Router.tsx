@@ -1,5 +1,5 @@
 // ** Router Components
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import LayoutTag from "../layout/HorizontalLayout"
 import { RouteArr } from "./routes"
 
@@ -49,6 +49,9 @@ const Router = () => {
         <BrowserRouter>
             <LayoutTag test='test' ex='ex'>
                 <Routes>
+                    <Route 
+                        path="/"
+                        element={<Navigate replace to={"/dashboard/site"}/>}/>
                     {ResolveRoutes()}
                 </Routes>
             </LayoutTag>
