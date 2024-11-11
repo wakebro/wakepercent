@@ -2,6 +2,7 @@ import { Button, Card, CardBody, CardText, Col, Row } from "reactstrap"
 
 import sample from '@src/assets/images/sample/medal.svg'
 import CardWelcom from "@views/dashboard/site/CardWelcom"
+import CardComposition from "@views/dashboard/site/CardComposition"
 
 const SiteDashboard = () => {
   return (
@@ -9,6 +10,9 @@ const SiteDashboard = () => {
       <Row style={{justifyContent:'center'}}>
         <Col xs='8'>
           <CardWelcom/>
+        </Col>
+        <Col xs='8'>
+          <CardComposition />
         </Col>
       </Row>
       <Row className="match-height" style={{justifyContent:'center'}}>

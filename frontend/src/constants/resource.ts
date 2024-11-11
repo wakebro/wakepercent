@@ -1,0 +1,1 @@
+export const API_ABOUT_COMPOSITON_IMG = '/static_backend/composition.jpg'
