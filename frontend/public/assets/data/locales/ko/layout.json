@@ -7,5 +7,8 @@
       "aboutSite" : "사이트 소개",
       "aboutPrjs" : "프로젝트"
     }
+  },
+  "about": {
+    "webComposition": "웹 구조"
   }
 }
