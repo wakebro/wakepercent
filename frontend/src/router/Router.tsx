@@ -1,13 +1,11 @@
 // ** Router Components
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom"
 import LayoutTag from "../layout/HorizontalLayout"
 import { RouteArr } from "./routes"
 
-
-// import LayoutWrapper from "@core/layouts/components/layout-wrapper"
-import LayoutWrapper from "@layouts/components/layout-wrapper"
 import { RoutesInfo } from "@core/typescript/layout"
-import { Fragment } from "react/jsx-runtime"
+import LayoutWrapper from "@layouts/components/layout-wrapper"
+import Error from "@views/pages/Error"
 
 const Router = () => {
     // ** Return Filtered Array of Routes & Paths
@@ -27,9 +25,8 @@ const Router = () => {
 
     const ResolveRoutes = () => {
         const { LayoutRoutes, LayoutPaths } = LayoutRoutesAndPaths()
-        
         return(
-            <Fragment>
+            <>
                 {
                     LayoutRoutes.map((route, idx) => {
                         return (
@@ -41,20 +38,32 @@ const Router = () => {
                         )
                     })
                 }
-                <Route path="*" element={<div className="err">error</div>}/>
-            </Fragment>
+            </>
         )
+    }
+
+    function Layout() {
+        return (
+            <LayoutTag>
+                {/* Outlet을 사용해 자식 Route를 렌더링 */}
+                <Outlet />
+            </LayoutTag>
+        );
     }
     return (
         <BrowserRouter>
-            <LayoutTag test='test' ex='ex'>
-                <Routes>
-                    <Route 
-                        path="/"
-                        element={<Navigate replace to={"/dashboard/site"}/>}/>
+            <Routes>
+                {/* "/" 경로로 접근 시 "/home"으로 리디렉션 */}
+                <Route path="/" element={<Navigate to="/dashboard/site" replace />} />
+
+                {/* 유효한 경로에 대해서만 Layout 적용 */}
+                <Route element={<Layout />}>
                     {ResolveRoutes()}
-                </Routes>
-            </LayoutTag>
+                </Route>
+
+                {/* 잘못된 URL 접근 시 독립적으로 렌더링될 NotFoundPage */}
+                <Route path="*" element={<Error />} />
+            </Routes>
         </BrowserRouter>
     )
     
