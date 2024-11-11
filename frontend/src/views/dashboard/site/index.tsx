@@ -3,6 +3,7 @@ import { Button, Card, CardBody, CardText, Col, Row } from "reactstrap"
 import sample from '@src/assets/images/sample/medal.svg'
 import CardWelcom from "@views/dashboard/site/CardWelcom"
 import CardComposition from "@views/dashboard/site/CardComposition"
+import CardWebUpdateLog from "@views/dashboard/site/CardWebUpdateLog"
 
 const SiteDashboard = () => {
   return (
@@ -11,11 +12,18 @@ const SiteDashboard = () => {
         <Col xs='8'>
           <CardWelcom/>
         </Col>
+      </Row>
+      <Row style={{justifyContent:'center'}}>
         <Col xs='8'>
           <CardComposition />
         </Col>
       </Row>
-      <Row className="match-height" style={{justifyContent:'center'}}>
+      <Row style={{justifyContent:'center'}}>
+        <Col xs='8'>
+          <CardWebUpdateLog/>
+        </Col>
+      </Row>
+      {/* <Row className="match-height" style={{justifyContent:'center'}}>
         <Col xl='4' md='6' xs='12'>
           <Card className="card-congratulations-medal">
             <CardBody>
@@ -270,7 +278,7 @@ const SiteDashboard = () => {
             </CardBody>
           </Card>
         </Col>
-      </Row>
+      </Row> */}
     </div>
   )
 }

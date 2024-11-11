@@ -9,6 +9,7 @@
     }
   },
   "about": {
-    "webComposition": "웹 구조"
+    "webComposition": "웹 구조",
+    "webUpdateLog": "웹 업데이트 로그"
   }
 }
