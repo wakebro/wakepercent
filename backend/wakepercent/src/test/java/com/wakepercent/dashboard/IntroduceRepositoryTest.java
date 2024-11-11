@@ -8,6 +8,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.wakepercent.commonEntity.ContentType;
 import com.wakepercent.commonEntity.dto.ContentDto;
 //import com.wakepercent.commonEntity.dto.QContentDto;
+import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,39 +24,26 @@ import static org.springframework.util.StringUtils.hasText;
 @Transactional
 class IntroduceRepositoryTest {
     @Autowired IntroduceRepository introduceRepository;
-    @Autowired EntityManager em;
-    JPAQueryFactory queryFactory;
-
-    @Test
-    public void getContentTest() {
-        List<Content> contentList = introduceRepository.findAll();
-
-//        for (Content con : contentList) {
-//            System.out.println("con = " + con.getContent());
-//        }
-    }
 
     @Test
     public void findByContentTypeTest() {
-//        queryFactory = new JPAQueryFactory(em);
         ContentType contentType = ContentType.SITE;
         System.out.println("contentType = " + contentType);
         String lang = "ko";
         List<ContentDto> result = introduceRepository.findByContentType(contentType, lang);
 
-//        List<ContentDto> result = queryFactory
-//                .select(Projections.constructor(ContentDto.class,
-//                        lang.equals("ko") ? content.contentKo : content.contentEn
-//                ))
-//                .from(content)
-//                .where(contentTypeEq(contentType))
-//                .fetch();
-//        System.out.println("cts.size() = " + result.size());
         for (ContentDto ct : result) {
             System.out.println("ct.getContent() = " + ct.getContent());
         }
     }
-//    private BooleanExpression contentTypeEq(ContentType contentType) {
-//        return hasText(contentType.toString()) ? content.contentType.eq(contentType) : null;
-//    }
+
+    @Test
+    public void findWebUpdateLog() {
+        String lang = "ko";
+        List<WebUpdateLogDto> result = introduceRepository.findWebUpdateLog(lang);
+        for (WebUpdateLogDto dto : result) {
+            System.out.println("dto.getTitle() = " + dto.getTitle());
+            System.out.println("dto.getContent() = " + dto.getContent());
+        }
+    }
 }

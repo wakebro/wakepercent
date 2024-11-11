@@ -28,4 +28,10 @@ class IntroduceControllerTest {
         System.out.println("result.get(\"content\") = " + result.get("content"));
     }
 
+    @Test
+    public void getWebUpdateLogTest() {
+        String lang = "ko";
+//        Map<String, Object> result = introduceController.getWebUpdateLog(lang);
+//        System.out.println("result.get(\"content\") = " + result.get("content"));
+    }
 }
