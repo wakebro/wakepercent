@@ -1,4 +1,4 @@
-import { API_ABOUT_SITE } from '@constants/api'
+import { API_ABOUT_SITE_INTRODUCE_TO } from '@constants/api'
 import { getDatas, lineChanging } from "@utility/util/aboutData"
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
@@ -21,11 +21,11 @@ const CardWelcom = () => {
   useEffect(() => {
     const params = { 
       lang: i18n.language,
-      contentType: 'site'
+      // contentType: 'site'
     }
 
     getDatas({
-      API: API_ABOUT_SITE, 
+      API: API_ABOUT_SITE_INTRODUCE_TO, 
       params: params, 
       callback: callback
     })
