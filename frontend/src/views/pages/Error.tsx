@@ -1,10 +1,13 @@
 import themeConfig from '@configs/themeConfig'
+import { RootState } from '@redux/store'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import { Link } from "react-router-dom"
 import { Button } from "reactstrap"
 
 const Error = () => {
+  const language = useSelector((state: RootState) => state.i18n.language)
 
   const { t, i18n } = useTranslation();
 
@@ -35,4 +38,3 @@ const Error = () => {
 }
 
 export default Error
-

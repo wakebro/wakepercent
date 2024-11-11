@@ -12,13 +12,14 @@ import './@core/scss/core.scss'
 
 // ** i18n
 import './configs/i18n'
+import { Spinner } from 'reactstrap'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
   <Provider store={store}>
-      <Suspense>
+      <Suspense fallback={<Spinner/>}>
         <App />
       </Suspense>
   </Provider>

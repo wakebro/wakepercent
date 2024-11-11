@@ -1,7 +1,9 @@
+import i18n from "./module/i18n"
 import testCountToolkit from "./module/testCountToolkit"
 
 const rootReducer = {
-    testCountToolkit
+    testCountToolkit,
+    i18n
 }
 
 export default rootReducer
