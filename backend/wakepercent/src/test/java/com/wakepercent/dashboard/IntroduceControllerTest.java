@@ -34,4 +34,10 @@ class IntroduceControllerTest {
 //        Map<String, Object> result = introduceController.getWebUpdateLog(lang);
 //        System.out.println("result.get(\"content\") = " + result.get("content"));
     }
+    @Test
+    public void getExperiencesTest() {
+        String lang = "ko";
+        Map<String, Object> result = introduceController.getExperiences(lang);
+        System.out.println("result.get(\"result\") = " + result.get("result"));
+    }
 }

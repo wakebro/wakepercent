@@ -5,6 +5,7 @@
 .text-md-center-lo-left {
   text-align: left;
 }
+
 /* 너비가 768px 이상일 때 */
 @media (min-width: 768px) {
   .text-md-left-lo-center {
@@ -13,5 +14,17 @@
   .text-md-center-lo-left {
     text-align: center;
   }
+  .text-md-right-lo-center {
+    text-align: right;
+  }
+}
+
+.only-text {
+  background-color: inherit;
+  border: none;
+}
+
+.mr-1{
+  margin-right: .25rem !important;
 }
 

@@ -1,10 +1,9 @@
 export const formatDatetimeYYYYMMDD = (datetimeString: string) => {
 	const reDatetimeStr = datetimeString.split('T')[0]
-  
-	const date = new Date(reDatetimeStr)
-	const year = date.getFullYear()
-	const month = String(date.getMonth() + 1)
-	const day = String(date.getDate())
+	return reDatetimeStr.slice(0, 10)
+}
 
-	return `${year}-${month}-${day}`
+export const formatDatetimeYYYYMM = (datetimeString: string) => {
+	const reDatetimeStr = datetimeString.split('T')[0]
+	return reDatetimeStr.slice(0, 7)
 }

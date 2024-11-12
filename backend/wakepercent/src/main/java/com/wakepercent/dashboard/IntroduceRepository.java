@@ -13,4 +13,5 @@ import java.util.List;
 
 @Repository
 public interface IntroduceRepository extends JpaRepository<Content, Long>, IntroduceRepositoryCustom {
+
 }

@@ -8,6 +8,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.wakepercent.commonEntity.ContentType;
 import com.wakepercent.commonEntity.dto.ContentDto;
 //import com.wakepercent.commonEntity.dto.QContentDto;
+import com.wakepercent.dashboard.Entity.dto.ExperienceDto;
 import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
@@ -44,6 +45,17 @@ class IntroduceRepositoryTest {
         for (WebUpdateLogDto dto : result) {
             System.out.println("dto.getTitle() = " + dto.getTitle());
             System.out.println("dto.getContent() = " + dto.getContent());
+        }
+    }
+
+    @Test
+    public void findExperiencesTest() {
+        String lang = "ko";
+        List<ExperienceDto> result = introduceRepository.findExperiences(lang);
+        for (ExperienceDto dto : result) {
+            System.out.println("dto = " + dto.getTitle());
+            System.out.println("dto = " + dto.getCompany());
+            System.out.println("dto = " + dto.getWork());
         }
     }
 }
