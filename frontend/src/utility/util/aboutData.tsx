@@ -6,7 +6,9 @@ export function getDatas<T>({ API, params, callback}: getDatasParams<T>) {
     params: params
   })
   .then(res => {
-    callback(res.data)
+    if (callback){
+      callback(res.data)
+    }
   })
 }
 

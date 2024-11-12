@@ -1,0 +1,17 @@
+/* 기본 스타일: 너비가 768px 미만일 때 */
+.text-md-left-lo-center {
+  text-align: center;
+}
+.text-md-center-lo-left {
+  text-align: left;
+}
+/* 너비가 768px 이상일 때 */
+@media (min-width: 768px) {
+  .text-md-left-lo-center {
+    text-align: left;
+  }
+  .text-md-center-lo-left {
+    text-align: center;
+  }
+}
+

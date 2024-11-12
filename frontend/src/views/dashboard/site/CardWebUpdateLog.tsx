@@ -12,7 +12,7 @@ interface LogData {
 }
 
 const CardWebUpdateLog = () => {
-  const { t, i18n} = useTranslation()
+  const { t, i18n } = useTranslation()
   const [data, setData] = useState<LogData[]>([])
 
   async function callback (data?: Record<string, any>) {

@@ -9,6 +9,7 @@ import store from './redux/store'
 
 // ** Core styles
 import './@core/scss/core.scss'
+import "./assets/scss/style.scss"
 
 // ** i18n
 import './configs/i18n'
