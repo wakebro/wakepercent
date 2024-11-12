@@ -47,7 +47,7 @@ public class IntroduceController {
     public Map<String, Object> getProjects(
             @RequestParam String lang) {
         Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("result", introduceService.getExperiences(lang));
+        resultMap.put("result", introduceService.getProjects(lang));
         return resultMap;
     }
 }

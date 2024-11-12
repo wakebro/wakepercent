@@ -83,11 +83,12 @@ public class IntroduceRepositoryImpl implements IntroduceRepositoryCustom {
                         project.dateOfEnd,
                         lang.equalsIgnoreCase("ko") ? project.clientKo : project.clientEn,
                         lang.equalsIgnoreCase("ko") ? experience.companyKo : experience.companyEn,
-                        lang.equalsIgnoreCase("ko") ? experience.workKo : experience.workEn,
+                        lang.equalsIgnoreCase("ko") ? project.workKo : project.workEn,
                         project.skill
                 ))
                 .from(project)
                 .leftJoin(project.experience, experience)
+                .orderBy(project.dateOfStart.desc())
                 .fetch();
     }
 }
