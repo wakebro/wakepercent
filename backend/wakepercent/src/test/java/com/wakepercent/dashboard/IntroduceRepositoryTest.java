@@ -9,6 +9,7 @@ import com.wakepercent.commonEntity.ContentType;
 import com.wakepercent.commonEntity.dto.ContentDto;
 //import com.wakepercent.commonEntity.dto.QContentDto;
 import com.wakepercent.dashboard.Entity.dto.ExperienceDto;
+import com.wakepercent.dashboard.Entity.dto.ProjectDto;
 import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
@@ -56,6 +57,16 @@ class IntroduceRepositoryTest {
             System.out.println("dto = " + dto.getTitle());
             System.out.println("dto = " + dto.getCompany());
             System.out.println("dto = " + dto.getWork());
+        }
+    }
+    
+    @Test
+    public void findProjectsTest() {
+        String lang = "en";
+        List<ProjectDto> results = introduceRepository.findProjects(lang);
+        for (ProjectDto dto : results) {
+            System.out.println("dto.getName() = " + dto.getName());
+            System.out.println("dto.getCompany() = " + dto.getCompany());
         }
     }
 }

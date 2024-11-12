@@ -9,6 +9,7 @@ import com.wakepercent.commonEntity.dto.ContentDto;
 import com.wakepercent.dashboard.Entity.QExperience;
 import com.wakepercent.dashboard.Entity.QWebUpdateLog;
 import com.wakepercent.dashboard.Entity.dto.ExperienceDto;
+import com.wakepercent.dashboard.Entity.dto.ProjectDto;
 import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import jakarta.persistence.EntityManager;
 
@@ -17,6 +18,7 @@ import java.util.List;
 import static com.wakepercent.commonEntity.QContent.content;
 import static com.wakepercent.dashboard.Entity.QWebUpdateLog.webUpdateLog;
 import static com.wakepercent.dashboard.Entity.QExperience.experience;
+import static com.wakepercent.dashboard.Entity.QProject.project;
 import static org.springframework.util.StringUtils.hasText;
 
 
@@ -68,6 +70,24 @@ public class IntroduceRepositoryImpl implements IntroduceRepositoryCustom {
                 ))
                 .from(experience)
                 .orderBy(experience.dateJoin.desc())
+                .fetch();
+    }
+
+    @Override
+    public List<ProjectDto> findProjects(String lang) {
+        return queryFactory
+                .select(Projections.constructor(ProjectDto.class,
+                        lang.equalsIgnoreCase("ko") ? project.nameKo : project.nameEn,
+                        lang.equalsIgnoreCase("ko") ? project.descriptionKo : project.descriptionEn,
+                        project.dateOfStart,
+                        project.dateOfEnd,
+                        lang.equalsIgnoreCase("ko") ? project.clientKo : project.clientEn,
+                        lang.equalsIgnoreCase("ko") ? experience.companyKo : experience.companyEn,
+                        lang.equalsIgnoreCase("ko") ? experience.workKo : experience.workEn,
+                        project.skill
+                ))
+                .from(project)
+                .leftJoin(project.experience, experience)
                 .fetch();
     }
 }

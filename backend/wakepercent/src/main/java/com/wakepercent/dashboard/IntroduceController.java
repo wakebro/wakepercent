@@ -42,4 +42,12 @@ public class IntroduceController {
         resultMap.put("result", introduceService.getExperiences(lang));
         return resultMap;
     }
+
+    @GetMapping("/me/projects")
+    public Map<String, Object> getProjects(
+            @RequestParam String lang) {
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("result", introduceService.getExperiences(lang));
+        return resultMap;
+    }
 }

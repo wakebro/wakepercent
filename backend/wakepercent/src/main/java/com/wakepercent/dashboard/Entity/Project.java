@@ -37,6 +37,8 @@ public class Project {
     private String workEn;
 
     private String skill;
+    private String clientKo;
+    private String clientEn;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "experience_id")
