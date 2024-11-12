@@ -1,18 +1,21 @@
 package com.wakepercent.dashboard.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString(of = {"id", "companyKo", "companyEn", "dateJoin", "dateQuit",
+        "titleKo", "titleEn", "workKo", "workEn", "skill"
+    })
 public class Experience {
     @Id @GeneratedValue
     @Column(name = "experience_id")
@@ -33,4 +36,7 @@ public class Experience {
     private String workEn;
 
     private String skill;
+
+    @OneToMany(mappedBy = "experience")
+    private List<Project> projects = new ArrayList<>();
 }
