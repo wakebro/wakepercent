@@ -5,7 +5,9 @@
       "about" : "소개",
       "abouteMe" : "내 소개",
       "aboutSite" : "사이트 소개",
-      "aboutPrjs" : "프로젝트"
+      "prjs" : "프로젝트",
+      "prjCompleted": "완료 프로젝트",
+      "prjFeature" : "기능"
     }
   },
   "about": {

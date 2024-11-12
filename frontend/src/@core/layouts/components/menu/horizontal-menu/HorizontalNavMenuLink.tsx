@@ -17,7 +17,7 @@ const HorizontalNavMenuLink = ({menuData, setOpenDropdown}: MenuItems & CoreMenu
       <NavLink
         className="d-flex align-items-center dropdown-item"
         to={menuData?.navLink as string}
-      >
+      > {menuData?.icon}
         { t(`header.menubar.${menuData?.id}`) }
       </NavLink>
     </li>

@@ -1,5 +1,5 @@
 // ** Icons Import
-import { Home, Activity, ShoppingCart } from 'react-feather'
+import { Globe, Home, Smile } from 'react-feather'
 
 export default [
   {
@@ -10,13 +10,13 @@ export default [
       {
         id: 'abouteMe',
         title: '내 소개',
-        icon: <Activity />,
+        icon: <Smile />,
         navLink: '/dashboard/me'
       },
       {
         id: 'aboutSite',
         title: '사이트 소개',
-        icon: <ShoppingCart />,
+        icon: <Globe />,
         navLink: '/dashboard/site'
       }
     ]

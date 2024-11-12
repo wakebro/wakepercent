@@ -5,7 +5,9 @@
       "about" : "About",
       "abouteMe" : "About Me",
       "aboutSite" : "About Site",
-      "aboutPrjs" : "Projects"
+      "prjs" : "Projects",
+      "prjCompleted": "Completed Prj",
+      "prjFeature": "Feature"
     }
   },
   "about": {
