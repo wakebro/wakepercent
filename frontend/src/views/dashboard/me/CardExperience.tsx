@@ -21,7 +21,6 @@ const CardExperience = () => {
   async function callback (data?: Record<string, any>) {
     if (data !== null) {
       const result = data?.['result']
-      console.log(result)
       await setData(result)
     }
   }

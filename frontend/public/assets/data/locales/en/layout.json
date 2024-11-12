@@ -11,7 +11,9 @@
   "about": {
     "webComposition": "Web Composition",
     "webUpdateLog": "Web Upadte Log",
-    "meName": "Gisang Hyung"
+    "meName": "Gisang Hyung",
+    "company": "Company",
+    "client": "Client"
   },
   "error": {
     "title": "Page Not Found 🙅",

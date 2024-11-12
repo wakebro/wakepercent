@@ -11,7 +11,9 @@
   "about": {
     "webComposition": "웹 구조",
     "webUpdateLog": "웹 업데이트 로그",
-    "meName": "형기상"
+    "meName": "형기상",
+    "company": "회사",
+    "client": "고객사"
   },
   "error": {
     "title": "찾을 수 없는 페이지 🙅",
