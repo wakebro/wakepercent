@@ -47,4 +47,12 @@ class IntroduceControllerTest {
         Map<String, Object> result = introduceController.getProjects(lang);
         System.out.println("result.get(\"result\") = " + result.get("result"));
     }
+
+    @Test
+    public void getProjectTest() {
+        Long id = 7L;
+        String lang = "ko";
+        Map<String, Object> result = introduceController.getProject(id, lang);
+        System.out.println("result.get(\"result\") = " + result.get("result"));
+    }
 }

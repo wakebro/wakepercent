@@ -3,6 +3,7 @@ package com.wakepercent.dashboard;
 import com.wakepercent.commonEntity.ContentType;
 import com.wakepercent.commonEntity.dto.ContentDto;
 import com.wakepercent.dashboard.Entity.dto.ExperienceDto;
+import com.wakepercent.dashboard.Entity.dto.ProjectDetailDto;
 import com.wakepercent.dashboard.Entity.dto.ProjectDto;
 import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import org.junit.jupiter.api.Test;
@@ -53,5 +54,13 @@ class IntroduceServiceTest {
             System.out.println("dto.getTitle() = " + dto.getName());
             System.out.println("dto.getTitle() = " + dto.getCompany());
         }
+    }
+
+    @Test
+    public void getProjectDetailTest() {
+        Long id = 7L;
+        String lang = "ko";
+        ProjectDetailDto result = introduceService.getProjectDetail(id, lang);
+        System.out.println("result = " + result);
     }
 }

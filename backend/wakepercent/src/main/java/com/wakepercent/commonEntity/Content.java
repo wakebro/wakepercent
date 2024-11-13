@@ -20,8 +20,9 @@ public class Content {
     @Enumerated(EnumType.STRING)
     private ContentType contentType;
 
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String contentKo;
-
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String contentEn;
 
 }

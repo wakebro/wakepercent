@@ -9,6 +9,7 @@ import com.wakepercent.commonEntity.ContentType;
 import com.wakepercent.commonEntity.dto.ContentDto;
 //import com.wakepercent.commonEntity.dto.QContentDto;
 import com.wakepercent.dashboard.Entity.dto.ExperienceDto;
+import com.wakepercent.dashboard.Entity.dto.ProjectDetailDto;
 import com.wakepercent.dashboard.Entity.dto.ProjectDto;
 import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import jakarta.persistence.EntityManager;
@@ -68,5 +69,14 @@ class IntroduceRepositoryTest {
             System.out.println("dto.getName() = " + dto.getName());
             System.out.println("dto.getCompany() = " + dto.getCompany());
         }
+    }
+    
+    @Test
+    public void findProjectDetailTest() {
+        Long id = 7L;
+        String lang = "ko";
+        ProjectDetailDto result = introduceRepository.findProjectDetail(id, lang);
+        System.out.println("result.getName() = " + result.getName());
+        System.out.println("result.getWorkDetail() = " + result.getWorkDetail());
     }
 }

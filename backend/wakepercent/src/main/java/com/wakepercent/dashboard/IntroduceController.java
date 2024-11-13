@@ -27,8 +27,7 @@ public class IntroduceController {
     }
 
     @GetMapping("/site/web-update-log")
-    public Map<String, Object> getWebUpdateLog(
-            @RequestParam String lang) {
+    public Map<String, Object> getWebUpdateLog( @RequestParam String lang) {
         System.out.println("web-update-log");
         Map<String, Object> resultMap = new HashMap<>();
         resultMap.put("result", introduceService.getWebUpdateLog(lang));
@@ -36,18 +35,24 @@ public class IntroduceController {
     }
 
     @GetMapping("/me/experiences")
-    public Map<String, Object> getExperiences(
-            @RequestParam String lang) {
+    public Map<String, Object> getExperiences( @RequestParam String lang) {
         Map<String, Object> resultMap = new HashMap<>();
         resultMap.put("result", introduceService.getExperiences(lang));
         return resultMap;
     }
 
     @GetMapping("/me/projects")
-    public Map<String, Object> getProjects(
-            @RequestParam String lang) {
+    public Map<String, Object> getProjects( @RequestParam String lang) {
         Map<String, Object> resultMap = new HashMap<>();
         resultMap.put("result", introduceService.getProjects(lang));
+        return resultMap;
+    }
+
+    @GetMapping("/me/project")
+    public Map<String, Object> getProject(@RequestParam Long id,
+                            @RequestParam String lang) {
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("result", introduceService.getProjectDetail(id, lang));
         return resultMap;
     }
 }

@@ -2,13 +2,11 @@ package com.wakepercent.dashboard.RepositoryCustom;
 
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
-import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.wakepercent.commonEntity.ContentType;
 import com.wakepercent.commonEntity.dto.ContentDto;
-import com.wakepercent.dashboard.Entity.QExperience;
-import com.wakepercent.dashboard.Entity.QWebUpdateLog;
 import com.wakepercent.dashboard.Entity.dto.ExperienceDto;
+import com.wakepercent.dashboard.Entity.dto.ProjectDetailDto;
 import com.wakepercent.dashboard.Entity.dto.ProjectDto;
 import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import jakarta.persistence.EntityManager;
@@ -19,6 +17,7 @@ import static com.wakepercent.commonEntity.QContent.content;
 import static com.wakepercent.dashboard.Entity.QWebUpdateLog.webUpdateLog;
 import static com.wakepercent.dashboard.Entity.QExperience.experience;
 import static com.wakepercent.dashboard.Entity.QProject.project;
+import static com.wakepercent.dashboard.Entity.QProjectDetail.projectDetail;
 import static org.springframework.util.StringUtils.hasText;
 
 
@@ -92,4 +91,24 @@ public class IntroduceRepositoryImpl implements IntroduceRepositoryCustom {
                 .orderBy(project.dateOfStart.desc())
                 .fetch();
     }
+
+    @Override
+    public ProjectDetailDto findProjectDetail(Long id, String lang) {
+        return queryFactory
+                .select(Projections.constructor(ProjectDetailDto.class,
+                        projectDetail.id,
+                        lang.equalsIgnoreCase("ko") ? project.nameKo : project.nameEn,
+                        lang.equalsIgnoreCase("ko") ? project.descriptionKo : project.descriptionEn,
+                        project.dateOfStart,
+                        project.dateOfEnd,
+                        lang.equalsIgnoreCase("ko") ? projectDetail.workDetailKo : projectDetail.workDetailEn,
+                        project.skill
+                ))
+                .from(projectDetail)
+                .leftJoin(projectDetail.project, project)
+                .leftJoin(project.experience, experience)
+                .where(project.id.eq(id))
+                .fetchOne();
+    }
+
 }

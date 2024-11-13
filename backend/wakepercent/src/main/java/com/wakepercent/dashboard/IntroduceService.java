@@ -4,6 +4,7 @@ import com.wakepercent.commonEntity.Content;
 import com.wakepercent.commonEntity.ContentType;
 import com.wakepercent.commonEntity.dto.ContentDto;
 import com.wakepercent.dashboard.Entity.dto.ExperienceDto;
+import com.wakepercent.dashboard.Entity.dto.ProjectDetailDto;
 import com.wakepercent.dashboard.Entity.dto.ProjectDto;
 import com.wakepercent.dashboard.Entity.dto.WebUpdateLogDto;
 import lombok.RequiredArgsConstructor;
@@ -23,4 +24,6 @@ public class IntroduceService {
     public List<ExperienceDto> getExperiences (String lang) {return introduceRepository.findExperiences(lang);}
 
     public List<ProjectDto> getProjects (String lang) {return introduceRepository.findProjects(lang);}
+
+    public ProjectDetailDto getProjectDetail (Long id, String lang) {return introduceRepository.findProjectDetail(id, lang);}
 }
