@@ -17,6 +17,10 @@
     "company": "회사",
     "client": "고객사"
   },
+  "prj": {
+    "description": "프로젝트 내용",
+    "skill": "주요 기술"
+  },
   "error": {
     "title": "찾을 수 없는 페이지 🙅",
     "content": "접속한 URL은 지원하지 않거나 잘못된 경로입니다.",

@@ -1,3 +1,4 @@
+import ProjectList from "@views/project/completed/ProjectList"
 import { Col, Row } from "reactstrap"
 
 const PrjCompleted = () => {
@@ -5,7 +6,7 @@ const PrjCompleted = () => {
     <div id='prj-completed'>
       <Row style={{justifyContent:'center'}}>
         <Col xs='8'>
-          완료 프로젝트
+          <ProjectList/>
         </Col>
       </Row>
     </div>

@@ -1,19 +1,10 @@
 import { API_ABOUT_ME_PROJECTS } from "@constants/api"
-import { formatDatetimeYYYYMM } from "@utility/util/dataTime"
+import { Project } from "@utility/typescript/aboutData"
 import { getDatas } from "@utility/util/aboutData"
+import { formatDatetimeYYYYMM } from "@utility/util/dataTime"
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Badge, Col, Row, Spinner } from "reactstrap"
-interface Project {
-  name: string;
-  description: string;
-  dateOfStart: string;
-  dateOfEnd: string;
-  client: string;
-  company: string;
-  work: string;
-  skill: string;
-}
 
 const CardProject = () => {
   const { t, i18n } = useTranslation()
@@ -22,7 +13,6 @@ const CardProject = () => {
   async function callback (data?: Record<string, any>) {
     if (data !== null) {
       const result = data?.['result']
-      console.log(result)
       await setData(result)
     }
   }

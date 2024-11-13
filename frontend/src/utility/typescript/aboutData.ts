@@ -4,3 +4,14 @@ export interface getDatasParams<T> {
   // setState: React.Dispatch<React.SetStateAction<T>> // useState의 setState 함수
   callback: (result?: Record<string, any>) => void
 }
+
+export interface Project {
+  name: string;
+  description: string;
+  dateOfStart: string;
+  dateOfEnd: string;
+  client: string;
+  company: string;
+  work: string;
+  skill: string;
+}

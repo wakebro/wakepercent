@@ -17,6 +17,10 @@
     "company": "Company",
     "client": "Client"
   },
+  "prj": {
+    "description": "Description",
+    "skill": "Skill"
+  },
   "error": {
     "title": "Page Not Found 🙅",
     "content": "The requested URL was not found on this server.",
