@@ -77,6 +77,7 @@ public class IntroduceRepositoryImpl implements IntroduceRepositoryCustom {
     public List<ProjectDto> findProjects(String lang) {
         return queryFactory
                 .select(Projections.constructor(ProjectDto.class,
+                        project.id,
                         lang.equalsIgnoreCase("ko") ? project.nameKo : project.nameEn,
                         lang.equalsIgnoreCase("ko") ? project.descriptionKo : project.descriptionEn,
                         project.dateOfStart,

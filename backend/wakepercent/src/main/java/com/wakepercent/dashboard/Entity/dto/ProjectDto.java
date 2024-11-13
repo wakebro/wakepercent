@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 @Data
 @Getter
 public class ProjectDto {
+    private Long id;
     private String name;
     private String description;
     private LocalDateTime dateOfStart;
@@ -17,7 +18,8 @@ public class ProjectDto {
     private String work;
     private String skill;
 
-    public ProjectDto(String name, String description, LocalDateTime dateOfStart, LocalDateTime dateOfEnd, String client, String company, String work, String skill) {
+    public ProjectDto(Long id, String name, String description, LocalDateTime dateOfStart, LocalDateTime dateOfEnd, String client, String company, String work, String skill) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.dateOfStart = dateOfStart;

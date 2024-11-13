@@ -6,6 +6,7 @@ export interface getDatasParams<T> {
 }
 
 export interface Project {
+  id: number;
   name: string;
   description: string;
   dateOfStart: string;
