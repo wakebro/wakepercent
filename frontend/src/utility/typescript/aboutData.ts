@@ -16,3 +16,13 @@ export interface Project {
   work: string;
   skill: string;
 }
+
+export interface PrjDetail {
+  id: number;
+  name: string;
+  description: string;
+  dateOfStart: string;
+  dateOfEnd: string;
+  workDetail: string;
+  skill: string;
+}

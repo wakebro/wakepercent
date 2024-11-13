@@ -1,14 +1,18 @@
 import { API_ABOUT_ME_PROJECTS } from "@constants/api"
+import { ROUTE_PROJECT_LIST } from "@constants/route"
 import { Project } from "@utility/typescript/aboutData"
 import { getDatas } from "@utility/util/aboutData"
 import { formatDatetimeYYYYMM } from "@utility/util/dataTime"
+
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 import { Badge, Card, CardBody, CardSubtitle, CardTitle, Col, Row, Spinner } from "reactstrap"
 
 const ProjectList = () => {
   const { t, i18n } = useTranslation()
   const [ data, setData ] = useState<Project[]>([])
+  const navigate = useNavigate()
 
   async function callback (data?: Record<string, any>) {
     if (data !== null) {
@@ -32,7 +36,7 @@ const ProjectList = () => {
         data === null || data.length === 0 ? <Spinner/>
         : data.map((d, idx) => {
           return (
-            <Card key={idx} style={{cursor: 'pointer'}}>
+            <Card key={d.id} style={{cursor: 'pointer'}} onClick={() => navigate(`${ROUTE_PROJECT_LIST}/${d.id}`)}>
               <CardBody>
                 <CardTitle tag="h3">{d.name}</CardTitle>
                 <CardSubtitle className="text-muted">

@@ -11,4 +11,6 @@ export const IS_AUTH = '/api/setting/is_auth'
 export const API_ABOUT_SITE_INTRODUCE_TO = '/api/about/site/introduce'
 export const API_ABOUT_SITE_UPDATE_LOG = '/api/about/site/web-update-log'
 export const API_ABOUT_ME_EXPERIENCE = '/api/about/me/experiences'
+
 export const API_ABOUT_ME_PROJECTS = '/api/about/me/projects'
+export const API_ABOUT_ME_PROJECT = '/api/about/me/project'
