@@ -23,13 +23,13 @@ export default [
         title: '진행 프로젝트',
         icon: <MessageSquare />,
         navLink: '/prj/list'
-      },
-      {
-        id: 'prjFeature',
-        title: '기능',
-        icon: <CheckSquare />,
-        navLink: '/prj/feature'
       }
+      // {
+      //   id: 'prjFeature',
+      //   title: '기능',
+      //   icon: <CheckSquare />,
+      //   navLink: '/prj/feature'
+      // }
     ]
   }
 ]

@@ -11,11 +11,11 @@ const ProjectRoutes:RoutesInfo[] = [
   {
     path: `${ROUTE_PROJECT_LIST}/:id`,
     component: lazy(() => import('../../views/project/completed/ProjectDetail'))
-  },
-  {
-    path: '/prj/feature',
-    component: lazy(() => import('../../views/project/feature'))
   }
+  // {
+  //   path: '/prj/feature',
+  //   component: lazy(() => import('../../views/project/feature'))
+  // }
 ]
 
 export default ProjectRoutes
