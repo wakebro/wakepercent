@@ -21,7 +21,7 @@ i18n
     backend: {
       loadPath: '/assets/data/locales/{{lng}}/{{ns}}.json'
     },
-    ns: ['layout']
+    ns: ['layout', 'component']
   });
 
   export default i18n;

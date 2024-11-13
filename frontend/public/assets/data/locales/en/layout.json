@@ -19,7 +19,9 @@
   },
   "prj": {
     "description": "Description",
-    "skill": "Skill"
+    "responsibility": "Responsibilities",
+    "skill": "Skill",
+    "workPeriod": "Work Period"
   },
   "error": {
     "title": "Page Not Found 🙅",
