@@ -241,3 +241,5 @@ docker-compose*.yml
 # End of https://www.toptal.com/developers/gitignore/api/gradle
 
 **/static_backend/**
+
+frontend/src/@core/*
